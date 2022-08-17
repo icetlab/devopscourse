@@ -1,0 +1,42 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "engines": {
+    "node": "14.x"
+  },
+  "private": true,
+  "description": "Example Application for ExpressJS API with Mongoose for Architectures for Scale-Out Systems (DAT490)",
+  "main": "./app.js",
+  "scripts": {
+    "start": "node ./app.js",
+    "dev": "nodemon ./app.js",
+    "server-test": "cross-env-shell MONGODB_URI=mongodb://localhost:27017/serverTestDB MONGODB_DB=serverTestDB \"npm run newman-server\"",
+    "ci-test": "npm run newman-server",
+    "newman-server": "cross-env-shell PORT=5046 \"npm run dropdb && run-p --race start newman-wait\"",
+    "newman-wait": "wait-on http://localhost:5001 && npm run newman",
+    "newman": "newman run ./tests/ScalyShop.postman_collection.json --env-var host=http://localhost:5001",
+    "dropdb": "node ./tests/dropdb.js --env-var mongoURI=mongodb://localhost:27017/serverTestDB"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://git.chalmers.se/courses/dat490/group-00-backend.git"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect-history-api-fallback": "^1.6.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "glob": "^7.1.7",
+    "mongoose": "^5.13.9",
+    "morgan": "^1.10.0",
+    "unleash-client": "^3.10.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "newman": "^5.1.2",
+    "nodemon": "^2.0.13",
+    "npm-run-all": "^4.1.5",
+    "wait-on": "^5.2.0",
+    "postman-collection": "v4.1.0"
+  }
+}

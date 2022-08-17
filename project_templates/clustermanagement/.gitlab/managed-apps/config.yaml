@@ -1,0 +1,23 @@
+---
+certManager:
+  installed: false
+  letsEncryptClusterIssuer:
+    installed: false
+cilium:
+  installed: false
+crossplane:
+  installed: false
+elasticStack:
+  installed: false
+gitlabRunner:
+  installed: false
+ingress:
+  installed: false
+jupyterhub:
+  installed: false
+prometheus:
+  installed: false
+sentry:
+  installed: false
+vault:
+  installed: false

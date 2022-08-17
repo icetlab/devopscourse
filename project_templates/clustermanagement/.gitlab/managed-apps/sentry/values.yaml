@@ -1,0 +1,27 @@
+# See https://github.com/helm/charts/tree/master/stable/sentry#configuration for available options
+
+# Admin user to create
+# user:
+  # Indicated to create the admin user or not,
+  # Default is true as the initial installation.
+  # create: true
+  # email: "<your email>"
+  # password: "<your password>"
+
+# email:
+#   from_address: "<your from email>"
+#   host: smtp
+#   port: 25
+#   use_tls: false
+#   user: "<your email username>"
+#   password: "<your email password>"
+#   enable_replies: false
+
+# ingress:
+#   enabled: true
+#   hostname: "<sentry.example.com>"
+
+# Needs to be here between runs.
+# See https://github.com/helm/charts/tree/master/stable/postgresql#upgrade for more info
+# postgresql:
+#   postgresqlPassword: example-postgresql-password

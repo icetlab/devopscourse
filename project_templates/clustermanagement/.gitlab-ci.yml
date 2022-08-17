@@ -1,0 +1,2 @@
+include:
+  - template: Managed-Cluster-Applications.gitlab-ci.yml
